@@ -37,6 +37,7 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - CSS custom properties
+- SCSS
 - Flexbox
 - Responsive design
 - [Open source icons](https://ionic.io/ionicons) - used for icons
