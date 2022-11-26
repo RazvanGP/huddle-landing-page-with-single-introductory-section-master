@@ -1,0 +1,166 @@
+@import url("https://fonts.google.com/specimen/Poppins");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+//general reset
+* {
+  padding: 0;
+  margin: 0;
+}
+
+//variables
+$backgroundColor: hsl(257, 40%, 49%);
+$hoverColor: hsl(300, 69%, 71%);
+$maxWidthDesktop: 1440px;
+$maxWidthMobile: 375px;
+
+body {
+  height: 100vh;
+  max-width: $maxWidthDesktop;
+  padding: 0 5%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: $backgroundColor;
+  background-image: url(./images/bg-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  & header {
+    align-self: flex-start;
+  }
+
+  //main
+  & .main-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5%;
+    //   height: 50%;
+    & .illustration {
+      max-width: 60%;
+      & img {
+        max-width: 100%;
+      }
+    }
+    & .section-container {
+      max-width: 40%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      & h1 {
+        font-family: "Poppins", sans-serif;
+        color: whitesmoke;
+        font-weight: 600;
+      }
+
+      & p {
+        font-family: "Open Sans", sans-serif;
+        color: whitesmoke;
+        font-weight: 400;
+        padding: 5% 0;
+      }
+
+      & .btn {
+        height: 40px;
+        width: 130px;
+        border-radius: 25px;
+        border: none;
+        box-shadow: 3px 3px 5px #333;
+        color: $backgroundColor;
+        &:hover {
+          background-color: $hoverColor;
+          cursor: pointer;
+          color: whitesmoke;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+
+  & footer {
+    align-self: flex-end;
+    & .contact {
+      margin-left: 0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 5%;
+
+      & a {
+        text-decoration: none;
+        color: whitesmoke;
+        &:hover {
+          color: $hoverColor;
+          transition: 0.2s;
+        }
+
+        & .icon {
+          width: 20px;
+          height: 20px;
+          padding: 5px;
+          border: solid 1px whitesmoke;
+          border-radius: 15px;
+          &:hover {
+            border-color: $hoverColor;
+          }
+        }
+      }
+    }
+
+    & .attribution {
+      color: #333;
+      font-size: 11px;
+      text-align: center;
+      & a {
+        color: hsl(228, 45%, 30%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    max-width: $maxWidthMobile;
+    justify-content: space-evenly;
+
+    & .logo {
+      max-width: 50%;
+      & img {
+        max-width: 100%;
+      }
+    }
+
+    & .main-container {
+      flex-direction: column;
+      text-align: center;
+      max-width: 100%;
+      & .illustration {
+        max-width: 100%;
+      }
+      & .main-container {
+        max-width: 100%;
+      }
+      & .section-container {
+        justify-content: space-evenly;
+        align-items: center;
+
+        max-width: 100%;
+      }
+    }
+
+    & footer {
+      align-self: center;
+      & .contact {
+        justify-content: center;
+      }
+    }
+  }
+}
